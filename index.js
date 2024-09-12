@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
 });
 
 // Endpoint to create a text file with current timestamp
-app.post("/create", (req, res) => {
+app.get("/create", (req, res) => {
   const currentDateTime = fns.format(new Date(), "yyyy-MM-dd-HH-mm-ss");
   const filePath = `TimeStamps/${currentDateTime}.txt`;
   fs.writeFileSync(filePath, currentDateTime, "utf-8");
